@@ -1,0 +1,1007 @@
+/* ============================= */
+/* IMPORTAÇÃO DAS FONTES */
+/* ============================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+/* ============================= */
+/* RESET */
+/* ============================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* ============================= */
+/* BODY */
+/* ============================= */
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    color:#F4F4F4;
+
+    background:
+    radial-gradient(circle at top,#4e1111 0%,#181818 45%,#0d0d0d 100%);
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+
+    position:relative;
+
+}
+
+/* Símbolo de fundo */
+
+body::before{
+
+content:"☯";
+
+position:fixed;
+
+font-size:40rem;
+
+opacity:.03;
+
+top:50%;
+
+left:50%;
+
+transform:translate(-50%,-50%);
+
+pointer-events:none;
+
+z-index:-1;
+
+}
+
+/* ============================= */
+/* HEADER */
+/* ============================= */
+
+header{
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+justify-content:center;
+
+padding:60px 20px;
+
+text-align:center;
+
+}
+
+/* ============================= */
+/* FOTO */
+/* ============================= */
+
+header img{
+
+width:220px;
+
+height:220px;
+
+object-fit:cover;
+
+border-radius:50%;
+
+border:6px solid #C89B3C;
+
+box-shadow:
+
+0 0 35px rgba(200,155,60,.35),
+
+0 10px 35px rgba(0,0,0,.6);
+
+transition:.5s;
+
+animation:flutuar 5s ease-in-out infinite;
+
+}
+
+header img:hover{
+
+transform:scale(1.05);
+
+box-shadow:
+
+0 0 50px rgba(255,205,92,.6);
+
+}
+
+/* ============================= */
+/* TITULO */
+/* ============================= */
+
+header h1{
+
+margin-top:25px;
+
+font-family:'Cinzel',serif;
+
+font-size:3rem;
+
+letter-spacing:4px;
+
+color:#DDB45C;
+
+text-shadow:
+
+0 0 12px rgba(221,180,92,.25);
+
+}
+
+/* ============================= */
+/* FRASE */
+/* ============================= */
+
+.frase{
+
+margin-top:12px;
+
+font-size:1.1rem;
+
+font-style:italic;
+
+color:#d7d7d7;
+
+opacity:.9;
+
+}
+
+/* ============================= */
+/* MAIN */
+/* ============================= */
+
+main{
+
+width:min(900px,90%);
+
+margin:auto;
+
+padding-bottom:80px;
+
+}
+
+/* ============================= */
+/* ANIMAÇÕES */
+/* ============================= */
+
+@keyframes flutuar{
+
+0%{
+
+transform:translateY(0px);
+
+}
+
+50%{
+
+transform:translateY(-8px);
+
+}
+
+100%{
+
+transform:translateY(0px);
+
+}
+
+}
+
+@keyframes aparecer{
+
+from{
+
+opacity:0;
+
+transform:translateY(25px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+main{
+
+animation:aparecer 1s ease;
+
+}
+
+/* ============================= */
+/* TÍTULOS */
+/* ============================= */
+
+h2{
+
+margin-top:20px;
+
+margin-bottom:10px;
+
+font-family:'Cinzel';
+
+color:#DDB45C;
+
+}
+
+h3{
+
+margin-top:15px;
+
+margin-bottom:10px;
+
+color:#d6b25f;
+
+font-weight:500;
+
+}
+
+p{
+
+line-height:1.8;
+
+}
+
+ul{
+
+margin-top:15px;
+
+padding-left:25px;
+
+}
+
+li{
+
+margin:10px 0;
+
+line-height:1.8;
+
+}
+/* ====================================== */
+/* DETAILS (CARDS) */
+/* ====================================== */
+
+details{
+
+    background:rgba(34,34,34,.92);
+
+    border:2px solid rgba(200,155,60,.20);
+
+    border-radius:18px;
+
+    margin:25px 0;
+
+    overflow:hidden;
+
+    transition:.4s;
+
+    box-shadow:
+    0 8px 20px rgba(0,0,0,.35);
+
+}
+
+details:hover{
+
+    transform:translateY(-5px);
+
+    border-color:#C89B3C;
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,.55),
+    0 0 15px rgba(200,155,60,.20);
+
+}
+
+/* ====================================== */
+/* BOTÃO (SUMMARY) */
+/* ====================================== */
+
+summary{
+
+    list-style:none;
+
+    cursor:pointer;
+
+    padding:22px 30px;
+
+    font-size:1.15rem;
+
+    font-weight:600;
+
+    color:#F4F4F4;
+
+    background:linear-gradient(
+    90deg,
+    #2b2b2b,
+    #1d1d1d
+    );
+
+    transition:.4s;
+
+    position:relative;
+
+    user-select:none;
+
+}
+
+/* Remove a seta padrão */
+
+summary::-webkit-details-marker{
+
+    display:none;
+
+}
+
+/* Barra dourada lateral */
+
+summary::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    width:6px;
+
+    height:100%;
+
+    background:#C89B3C;
+
+    transition:.4s;
+
+}
+
+/* Hover */
+
+summary:hover{
+
+    background:#303030;
+
+    padding-left:38px;
+
+    color:#FFD77B;
+
+}
+
+/* Setinha personalizada */
+
+summary::after{
+
+    content:"➜";
+
+    position:absolute;
+
+    right:25px;
+
+    transition:.35s;
+
+    color:#C89B3C;
+
+}
+
+details[open] summary::after{
+
+    transform:rotate(90deg);
+
+}
+
+/* ====================================== */
+/* CONTEÚDO */
+/* ====================================== */
+
+details>*:not(summary){
+
+    padding:25px 35px;
+
+    animation:abrir .5s ease;
+
+}
+
+/* ====================================== */
+/* ANIMAÇÃO */
+/* ====================================== */
+
+@keyframes abrir{
+
+from{
+
+opacity:0;
+
+transform:translateY(-10px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* ====================================== */
+/* LISTAS */
+/* ====================================== */
+
+li{
+
+transition:.3s;
+
+}
+
+li:hover{
+
+color:#FFD77B;
+
+padding-left:6px;
+
+}
+
+/* ====================================== */
+/* BLOCKQUOTE */
+/* ====================================== */
+
+blockquote{
+
+margin-top:20px;
+
+padding:18px;
+
+border-left:5px solid #C89B3C;
+
+background:#252525;
+
+border-radius:10px;
+
+font-style:italic;
+
+color:#ececec;
+
+}
+
+/* ====================================== */
+/* LINKS (caso adicione depois) */
+/* ====================================== */
+
+a{
+
+color:#FFD77B;
+
+text-decoration:none;
+
+transition:.3s;
+
+}
+
+a:hover{
+
+color:white;
+
+}
+
+/* ====================================== */
+/* SCROLLBAR */
+/* ====================================== */
+
+::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#111;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:#C89B3C;
+
+border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+background:#e0b95e;
+
+}
+
+/* ====================================== */
+/* FOOTER */
+/* ====================================== */
+
+footer{
+
+text-align:center;
+
+padding:40px 20px;
+
+color:#aaa;
+
+font-size:.9rem;
+
+letter-spacing:1px;
+
+}
+
+/* ====================================== */
+/* RESPONSIVO */
+/* ====================================== */
+
+@media(max-width:768px){
+
+header img{
+
+width:170px;
+
+height:170px;
+
+}
+
+header h1{
+
+font-size:2.2rem;
+
+}
+
+summary{
+
+font-size:1rem;
+
+padding:18px 20px;
+
+}
+
+details>*:not(summary){
+
+padding:20px;
+
+}
+
+main{
+
+width:95%;
+
+}
+
+}
+/* ====================================== */
+/* WHATSAPP */
+/* ====================================== */
+
+.whatsapp{
+
+    width:100%;
+
+    max-width:520px;
+
+    margin:35px auto;
+
+    background:#ECE5DD;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.45);
+
+    border:3px solid #2B2B2B;
+
+}
+
+/* ====================================== */
+/* TOPO */
+/* ====================================== */
+
+.topo{
+
+    background:#075E54;
+
+    color:white;
+
+    padding:16px 20px;
+
+    font-weight:600;
+
+    font-size:1rem;
+
+    letter-spacing:1px;
+
+}
+
+/* ====================================== */
+/* ÁREA DAS MENSAGENS */
+/* ====================================== */
+
+.whatsapp{
+
+background-image:
+
+linear-gradient(
+
+rgba(255,255,255,.08),
+
+rgba(255,255,255,.08)
+
+),
+
+url("https://www.transparenttextures.com/patterns/graphy.png");
+
+}
+
+.mensagem{
+
+background:#DCF8C6;
+
+margin:20px;
+
+padding:14px 18px;
+
+border-radius:14px;
+
+width:fit-content;
+
+max-width:95%;
+
+min-width:320px;
+
+
+
+box-shadow:
+
+0 4px 10px rgba(0,0,0,.15);
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+/* Rabinho da mensagem */
+
+.mensagem::after{
+
+content:"";
+
+position:absolute;
+
+left:-8px;
+
+top:10px;
+
+width:18px;
+
+height:18px;
+
+background:#DCF8C6;
+
+transform:rotate(45deg);
+
+}
+
+/* ====================================== */
+/* HORA */
+/* ====================================== */
+
+.hora{
+
+display:block;
+
+margin-top:10px;
+
+text-align:right;
+
+font-size:.75rem;
+
+color:#4FC3F7;
+
+font-weight:bold;
+
+opacity:0;
+
+animation:mostrarHora .5s forwards;
+
+}
+
+.hora{
+
+display:block;
+
+margin-top:10px;
+
+text-align:right;
+
+font-size:.75rem;
+
+color:#4FC3F7;
+
+font-weight:bold;
+
+opacity:0;
+
+animation:mostrarHora .5s forwards;
+
+animation-delay:3s;
+
+}
+
+@keyframes mostrarHora{
+
+to{
+
+opacity:1;
+
+}
+
+}
+
+/* ====================================== */
+/* DIGITAÇÃO */
+/* ====================================== */
+
+.digitando1{
+
+
+overflow:hidden;
+
+white-space:pre-line;
+
+max-width:0;
+display:inline-block;
+
+border-right:3px solid #111;
+
+font-family:Consolas, monospace;
+
+font-size:.93rem;
+
+color:#111;          /* ← TEXTO PRETO */
+
+animation-fill-mode:forwards;
+
+}
+/* Primeira mensagem */
+
+.digitando1{
+
+animation:
+
+digitar1 3s steps(45,end) forwards,
+
+cursor .6s infinite;
+
+}
+
+
+
+/* ====================================== */
+/* KEYFRAMES */
+/* ====================================== */
+
+@keyframes aparece{
+
+to{
+
+opacity:1;
+
+}
+
+}
+
+@keyframes cursor{
+
+50%{
+
+border-color:transparent;
+
+}
+
+}
+
+@keyframes digitar1{
+
+from{
+
+max-width:0;
+
+}
+
+to{
+
+max-width:350px;
+
+}
+
+}
+
+from{
+
+width:0;
+
+}
+
+to{
+
+width:34ch;
+
+}
+
+
+
+@keyframes digitar2{
+
+from{
+
+width:0;
+
+}
+
+to{
+
+width:100%;
+
+}
+
+}
+
+@keyframes digitar3{
+
+from{
+
+width:0;
+
+}
+
+to{
+
+width:100%;
+
+}
+
+}
+
+/* ====================================== */
+/* EFEITO NOS DETAILS */
+/* ====================================== */
+
+details{
+
+animation:subir .8s ease;
+
+}
+
+@keyframes subir{
+
+from{
+
+opacity:0;
+
+transform:translateY(35px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* ====================================== */
+/* BRILHO DOURADO */
+/* ====================================== */
+
+details:hover{
+
+box-shadow:
+
+0 15px 35px rgba(0,0,0,.45),
+
+0 0 18px rgba(200,155,60,.35);
+
+}
+
+/* ====================================== */
+/* FOTO */
+/* ====================================== */
+
+header img{
+
+animation:
+
+flutuar 5s ease-in-out infinite,
+
+brilho 4s infinite alternate;
+
+}
+
+@keyframes brilho{
+
+from{
+
+box-shadow:
+
+0 0 25px rgba(200,155,60,.25);
+
+}
+
+to{
+
+box-shadow:
+
+0 0 45px rgba(255,210,80,.7);
+
+}
+
+}
+
+/* ====================================== */
+/* FRASE */
+/* ====================================== */
+
+.frase{
+
+position:relative;
+
+}
+
+.frase::after{
+
+content:"";
+
+display:block;
+
+width:120px;
+
+height:3px;
+
+margin:15px auto;
+
+background:#C89B3C;
+
+border-radius:30px;
+
+}
+
+/* ====================================== */
+/* SELEÇÃO */
+/* ====================================== */
+
+::selection{
+
+background:#C89B3C;
+
+color:#111;
+
+}
+
+/* ====================================== */
+/* FIM */
+/* ====================================== */
